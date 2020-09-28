@@ -59,7 +59,14 @@ public class PhoneBook {
 
     }
 
-    public static void list(String[][] book) {
-        //print phone book
+    private static void list(String[][] book) {
+
+        Arrays.sort(book, Comparator.comparing(a -> a[0]));
+        System.out.println("**********************************************************************");
+        System.out.println("ТЕЛЕФОННЫЙ СПРАВОЧНИК");
+        for (String[] item : book) {
+            System.out.println(item[0] + ": " + item[1]);
+        }
+        System.out.println("**********************************************************************");
     }
 }
